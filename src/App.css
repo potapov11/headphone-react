@@ -1,0 +1,22 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+.container {
+	width: 1100px;
+	margin: 0 auto;
+}
+
+.headphone-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	width: 900px;
+	margin: 0 auto;
+}

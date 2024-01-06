@@ -1,0 +1,40 @@
+header {
+	padding: 15px 0;
+}
+
+.header-block {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header-icons,
+.icon-card-wrapper {
+	display: flex;
+}
+
+.icon-heart {
+	margin-left: 30px;
+}
+
+.icon-heart,
+.icon-card {
+	cursor: pointer;
+}
+
+.icon-card-circle {
+	position: absolute;
+	right: -15px;
+	top: -5px;
+	content: '';
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 20px;
+	height: 20px;
+	background-color: #ffa542;
+	border-radius: 50%;
+}
+
+.icon-card-wrapper {
+	position: relative;
+}
