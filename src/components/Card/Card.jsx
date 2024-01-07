@@ -1,4 +1,5 @@
 import headphones from '../data';
+import { useState } from 'react';
 import './Card.css';
 import img0 from '../../assets/img/image-1.jpg';
 import img11 from '../../assets/img/image-1.jpg';
@@ -16,14 +17,20 @@ import img9 from '../../assets/img/image-9.jpg';
 const images = [img0, img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11];
 
 // import img from '../../assets/img/image-1.jpg';
+const localIdArr = [];
 
 export default function Card({ setCount }) {
-	function handleBuyClick() {
-		setCount((prevCount) => prevCount + 1);
+	const [stateArr, setStateArr] = useState(headphones);
+
+	function handleBuyClick(id) {
+		setCount((oldCount) => oldCount + 1);
+		localIdArr.push(id);
+		console.log(id);
+		console.log(localIdArr);
+		localStorage.setItem('localArr', JSON.stringify(localIdArr));
 	}
 
-	console.log(headphones);
-	const newHeadphones = headphones.map((headphoneItem, index) => {
+	const newHeadphones = stateArr.map((headphoneItem, index) => {
 		return (
 			<div className="card" key={headphoneItem.id}>
 				<div className="card__img-wrapper">
@@ -35,7 +42,7 @@ export default function Card({ setCount }) {
 				</div>
 				<div className="card__subtext-wrapper card__text-wrapper">
 					<p className="card__rating">{headphoneItem.rating}</p>
-					<p className="card__buy-text" onClick={handleBuyClick}>
+					<p className="card__buy-text" onClick={() => handleBuyClick(headphoneItem.id)}>
 						Купить
 					</p>
 				</div>
