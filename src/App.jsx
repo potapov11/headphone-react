@@ -2,15 +2,15 @@ import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
 import Header from './components/Header/Header';
-import Card from './components/Card/Card';
+import { Card } from './components/Card/Card';
 import './App.css';
 
-function Home({ count, setCount }) {
+function Home({ count, setCount, localArr }) {
 	return (
 		<>
 			<Header count={count} />
 			<div className="headphone-container">
-				<Card setCount={setCount} />
+				<Card setCount={setCount} localArr={localArr} />
 			</div>
 		</>
 	);
@@ -18,14 +18,15 @@ function Home({ count, setCount }) {
 
 function App() {
 	const localArr = JSON.parse(localStorage.getItem('localArr'));
-	console.log(localArr);
+	console.log(localArr, 'localArr App');
 
 	const [count, setCount] = useState(localArr ? localArr.length : 0);
+	console.log(count, ' count');
 
 	return (
 		<>
 			<Routes>
-				<Route path="/" element={<Home count={count} setCount={setCount} />} />
+				<Route path="/" element={<Home count={count} setCount={setCount} localArr={localArr} />} />
 				<Route path="/cart" element={<Cart count={count} />} />
 			</Routes>
 		</>
