@@ -47,4 +47,4 @@ const headphones = [
 	},
 ];
 
-export default headphones;
+export { headphones };

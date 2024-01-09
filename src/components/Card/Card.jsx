@@ -1,4 +1,5 @@
-import headphones from '../data';
+import { headphones } from '../../assets/constant.js';
+console.log(headphones);
 import { useState } from 'react';
 import './Card.css';
 import img0 from '../../assets/img/image-1.jpg';

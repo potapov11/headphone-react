@@ -1,20 +1,10 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Cart from './components/Cart/Cart';
-import Header from './components/Header/Header';
-import { Card } from './components/Card/Card';
+import Home from './components/Home/Home';
+// import Header from './components/Header/Header';
+// import { Card } from './components/Card/Card';
 import './App.css';
-
-function Home({ count, setCount, localArr }) {
-	return (
-		<>
-			<Header count={count} />
-			<div className="headphone-container">
-				<Card setCount={setCount} localArr={localArr} />
-			</div>
-		</>
-	);
-}
 
 function App() {
 	const localArr = JSON.parse(localStorage.getItem('localArr'));

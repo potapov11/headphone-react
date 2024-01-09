@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
-import headphones from '../data';
+import { headphones } from '../../assets/constant.js';
 import { images } from '../Card/Card';
 
 export function CardFromLocalStorage({ setCount }) {
 	const [stateArr, setStateArr] = useState([]);
+	console.log(headphones);
 
 	useEffect(() => {
 		const localData = localStorage.getItem('localArr');

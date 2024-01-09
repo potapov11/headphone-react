@@ -7,23 +7,21 @@ import './Header.css';
 
 export default function Header({ count }) {
 	return (
-		<>
-			<header>
-				<div className="header-block">
-					<Link to="/">
-						<img src={logo} alt="logo" />
+		<header>
+			<div className="header-block">
+				<Link to="/">
+					<img src={logo} alt="logo" />
+				</Link>
+				<div className="header-icons">
+					<Link to="/cart">
+						<div className="icon-card-wrapper">
+							<img className="icon-card" src={card} alt="cart-img"></img>
+							<span className="icon-card-circle">{count}</span>
+						</div>
 					</Link>
-					<div className="header-icons">
-						<Link to="/cart">
-							<div className="icon-card-wrapper">
-								<img className="icon-card" src={card} alt="cart-img"></img>
-								<span className="icon-card-circle">{count}</span>
-							</div>
-						</Link>
-						<img className="icon-heart" src={heart} alt="cart-img"></img>
-					</div>
+					<img className="icon-heart" src={heart} alt="cart-img"></img>
 				</div>
-			</header>
-		</>
+			</div>
+		</header>
 	);
 }
