@@ -1,8 +1,8 @@
 import card from '../../assets/img/card-png.png';
 import logo from '../../assets/img/logo-QPICK.svg';
 import heart from '../../assets/img/heart-png.png';
-import { Routes, Route, Link } from 'react-router-dom';
-import Cart from '../Cart/Cart';
+import { Link } from 'react-router-dom';
+// import Cart from '../Cart/Cart';
 import './Header.css';
 
 export default function Header({ count }) {
